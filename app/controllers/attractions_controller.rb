@@ -8,6 +8,7 @@ class AttractionsController < ApplicationController
   end
 
   def create
+    binding.pry
     @attraction = Attraction.create(attraction_params)
     return redirect_to '/attractions/new' unless @attraction.save
     redirect_to admin_attraction_path(@attraction)
