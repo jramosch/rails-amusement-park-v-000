@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :attractions, except: []
+  resources :attractions
   post 'attractions/:id' => 'attractions#take_ride', as: :take_ride
 
   namespace :admin do
