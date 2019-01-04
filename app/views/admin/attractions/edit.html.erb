@@ -1,6 +1,6 @@
 <h2>Edit <%= @attraction.name %></h2>
 
 <% form_for @attraction do |f| %>
-  <%= render partial: 'form', locals: {f: f} %>
+  <%= render "form", locals: {f: f} %>
   <%= f.submit "Update Attraction" %>
 <% end %>
