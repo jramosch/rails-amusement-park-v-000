@@ -8,7 +8,6 @@ class AttractionsController < ApplicationController
   end
 
   def create
-    byebug
     @attraction = Attraction.create(params)
     return redirect_to '/attractions/new' unless @attraction.save
     redirect_to admin_attraction_path(@attraction)
