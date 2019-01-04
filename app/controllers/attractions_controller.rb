@@ -8,7 +8,7 @@ class AttractionsController < ApplicationController
   end
 
   def create
-    @attraction = Attraction.create(params)
+    @attraction = Attraction.create(attraction_params)
     return redirect_to '/attractions/new' unless @attraction.save
     redirect_to admin_attraction_path(@attraction)
   end
@@ -20,4 +20,6 @@ class AttractionsController < ApplicationController
     flash[:notice] = "Thanks for riding the #{@attraction.name}!"
     redirect_to '/'
   end
+
+  private
 end
