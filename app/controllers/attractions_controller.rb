@@ -24,8 +24,8 @@ class AttractionsController < ApplicationController
   def update
     @attraction = Attraction.find(params[:id])
     @attraction.update(attraction_params)
-    return edit_admin_attraction_path(@attraction) unless @attraction.save
-    redirect_to admin_attraction_path(@attraction)
+    return edit_attraction_path(@attraction) unless @attraction.save
+    redirect_to attraction_path(@attraction)
   end
 
   def take_ride
