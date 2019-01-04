@@ -7,6 +7,12 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
   end
 
+  def create
+    @attraction = Attraction.create(attraction_params)
+    return redirect_to '/attractions/new' unless @attraction.save
+    redirect_to admin_attraction_path(@attraction)
+  end
+
   def take_ride
     @attraction = Attraction.find(params[:id])
     ride = Ride.create(user_id: session[:user_id], attraction_id: @attraction.id)
