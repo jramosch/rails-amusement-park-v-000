@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       redirect_to "/users/#{@user.id}"
     end
   end
+
+  def current_user
+    @user = User.find(session[:user_id])
+  end
 end
