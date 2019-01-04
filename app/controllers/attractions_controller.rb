@@ -14,7 +14,7 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.create(attraction_params)
     return redirect_to '/attractions/new' unless @attraction.save
-    redirect_to admin_attraction_path(@attraction)
+    redirect_to attraction_path(@attraction)
   end
 
   def take_ride
