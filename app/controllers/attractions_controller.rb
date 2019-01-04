@@ -17,6 +17,10 @@ class AttractionsController < ApplicationController
     redirect_to attraction_path(@attraction)
   end
 
+  def edit
+    @attraction = Attraction.find(params[:id])
+  end
+
   def take_ride
     @attraction = Attraction.find(params[:id])
     ride = Ride.create(user_id: session[:user_id], attraction_id: @attraction.id)
